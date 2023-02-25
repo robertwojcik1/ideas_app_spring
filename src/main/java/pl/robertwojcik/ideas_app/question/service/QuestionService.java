@@ -11,29 +11,21 @@ import java.util.UUID;
 @Service
 public class QuestionService {
 
-    private final IdeasConfiguration ideasConfiguration;
-
-    public QuestionService(IdeasConfiguration ideasConfiguration) {
-        this.ideasConfiguration = ideasConfiguration;
-    }
-
     public List<Question> getQuestions() {
         return Arrays.asList(new Question("Question 1"), new Question("Question 2"));
     }
 
-    public String test(String value) {
-        return String.format("Hello %s %s", ideasConfiguration.getName(), value);
-    }
-
     public Question getQuestion(UUID id) {
-        return  null;
+        return  new Question("Question" + id);
     }
 
     public Question createQuestion(Question question) {
-        return null;
+        question.setId(UUID.randomUUID());
+
+        return question;
     }
     public Question updateQuestion(UUID id, Question question) {
-        return null;
+        return question;
     }
 
     public Question deleteQuestion(UUID id) {
