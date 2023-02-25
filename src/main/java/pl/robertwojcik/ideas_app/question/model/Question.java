@@ -1,4 +1,4 @@
-package pl.robertwojcik.ideas_app;
+package pl.robertwojcik.ideas_app.question.model;
 
 public class Question {
 
